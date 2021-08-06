@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost/tester
+    username: postgres
+    password: postgres
+  liquibase:
+    enabled: true
+    change-log: classpath:/db/changelog/db.changelog-master.yml
+    default-schema: public
+fileLocation: C:\right_answers.csv
+timeToLoad: 0 0 18 * * ?  # to test: 0 */1 * * * ? (every minute)
+server:
+  port: 8099

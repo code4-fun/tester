@@ -1,0 +1,167 @@
+databaseChangeLog:
+- changeSet:
+    id: 1
+    author: adm
+    changes:
+    - loadData:
+        columns:
+        - column:
+            header: id
+            name: id
+            type: NUMERIC
+        - column:
+            header: date_time
+            name: date_time
+            type: DATE
+        - column:
+            header: name
+            name: name
+            type: STRING
+        commentLineStartsWith: '#'
+        encoding: UTF-8
+        file: data/test_work.csv
+        quotchar: '"'
+        separator: ','
+        relativeToChangelogFile: true
+        tableName: test_work
+- changeSet:
+    id: 2
+    author: adm
+    changes:
+    - loadData:
+        columns:
+        - column:
+            header: id
+            name: id
+            type: NUMERIC
+        - column:
+            header: question_text
+            name: question_text
+            type: STRING
+        - column:
+            header: test_work_id
+            name: test_work_id
+            type: NUMERIC
+        commentLineStartsWith: '#'
+        encoding: UTF-8
+        file: data/question.csv
+        quotchar: '"'
+        separator: ','
+        relativeToChangelogFile: true
+        tableName: question
+- changeSet:
+    id: 3
+    author: adm
+    changes:
+    - loadData:
+        columns:
+        - column:
+            header: id
+            name: id
+            type: NUMERIC
+        - column:
+            header: email
+            name: email
+            type: STRING
+        - column:
+            header: password
+            name: password
+            type: STRING
+        - column:
+            header: username
+            name: username
+            type: STRING
+        commentLineStartsWith: '#'
+        encoding: UTF-8
+        file: data/usr.csv
+        quotchar: '"'
+        separator: ','
+        relativeToChangelogFile: true
+        tableName: usr
+- changeSet:
+    id: 4
+    author: adm
+    changes:
+    - loadData:
+        columns:
+        - column:
+            header: id
+            name: id
+            type: NUMERIC
+        - column:
+            header: date_of_birth
+            name: date_of_birth
+            type: DATE
+        - column:
+            header: name
+            name: name
+            type: STRING
+        - column:
+            header: user_id
+            name: user_id
+            type: NUMERIC
+        commentLineStartsWith: '#'
+        encoding: UTF-8
+        file: data/student.csv
+        quotchar: '"'
+        separator: ','
+        relativeToChangelogFile: true
+        tableName: student
+- changeSet:
+    id: 5
+    author: adm
+    changes:
+    - loadData:
+        columns:
+        - column:
+            header: id
+            name: id
+            type: NUMERIC
+        - column:
+            header: answer_text
+            name: answer_text
+            type: STRING
+        - column:
+            header: code
+            name: code
+            type: STRING
+        - column:
+            header: question_id
+            name: question_id
+            type: NUMERIC
+        commentLineStartsWith: '#'
+        encoding: UTF-8
+        file: data/answer_value.csv
+        quotchar: '"'
+        separator: ','
+        relativeToChangelogFile: true
+        tableName: answer_value
+- changeSet:
+    id: 6
+    author: adm
+    changes:
+    - loadData:
+        columns:
+        - column:
+            header: id
+            name: id
+            type: NUMERIC
+        - column:
+            header: answer_code
+            name: answer_code
+            type: STRING
+        - column:
+            header: question_id
+            name: question_id
+            type: NUMERIC
+        - column:
+            header: student_id
+            name: student_id
+            type: NUMERIC
+        commentLineStartsWith: '#'
+        encoding: UTF-8
+        file: data/students_answer.csv
+        quotchar: '"'
+        separator: ','
+        relativeToChangelogFile: true
+        tableName: students_answer
