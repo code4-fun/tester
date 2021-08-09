@@ -10,8 +10,8 @@ databaseChangeLog:
             name: id
             type: NUMERIC
         - column:
-            header: date_time
-            name: date_time
+            header: date
+            name: date
             type: DATE
         - column:
             header: name

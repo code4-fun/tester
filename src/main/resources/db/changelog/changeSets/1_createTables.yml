@@ -104,8 +104,8 @@ databaseChangeLog:
             name: id
             type: BIGINT
         - column:
-            name: date_time
-            type: TIMESTAMP WITHOUT TIME ZONE
+            name: date
+            type: date
         - column:
             name: name
             type: VARCHAR(255)
@@ -244,5 +244,5 @@ databaseChangeLog:
         maxValue: 9223372036854775807
         minValue: 1
         sequenceName: hibernate_sequence
-        startValue: 1
+        startValue: 25
 

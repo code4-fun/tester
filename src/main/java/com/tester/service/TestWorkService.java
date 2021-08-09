@@ -20,7 +20,7 @@ public class TestWorkService {
   public TestWork updateTestWork(TestWork testWork) {
     TestWork testWorkToUpdate = getTestWorkById(testWork.getId());
     testWorkToUpdate.setName(testWork.getName());
-    testWorkToUpdate.setDateTime(testWork.getDateTime());
+    testWorkToUpdate.setDate(testWork.getDate());
     return createTestWork(testWork);
   }
 

@@ -59,4 +59,13 @@ public class QuestionService {
   public void deleteAllQuestions(){
     questionRepository.deleteAll();
   }
+
+  /**
+   * Returns all questions related to the particular test.
+   * @param testWorkId id of the the test
+   * @return
+   */
+  public List<Question> getAllQuestionsOfTestWork(Long testWorkId){
+    return questionRepository.findByTestWorkId(testWorkId);
+  }
 }

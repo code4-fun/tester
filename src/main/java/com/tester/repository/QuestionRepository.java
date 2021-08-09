@@ -8,4 +8,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface QuestionRepository extends CrudRepository<Question, Long> {
   List<Question> findAll();
+  List<Question> findByTestWorkId(Long id);
 }

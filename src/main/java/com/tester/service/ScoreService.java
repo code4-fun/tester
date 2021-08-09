@@ -68,8 +68,8 @@ public class ScoreService {
   }
 
   /**
-   * Compares two collections of Strings not without
-   * taking into account the order of the elements.
+   * Compares two collections of Strings not taking
+   * into account the order of the elements.
    * @param list1
    * @param list2
    * @return
@@ -91,7 +91,8 @@ public class ScoreService {
    * 1 -> [1, 2, 3, 4]
    * 2 -> [5, 6, 7, 8]
    * ...
-   * which means test with id=1 is related to the questions listed in square brackets.
+   * which means test with id=1, id=2 etc is related to the questions
+   * listed in square brackets.
    * @return
    */
   public Map<Long, List<Long>> testWorkAndQuestionsMap(){
@@ -126,7 +127,7 @@ public class ScoreService {
 
     List<StudentsAnswer> studentAnswerList = studentsAnswerService.getAllStudentsAnswers();
 
-    // Не повторяющиеся ID студентов, сдававших тесты.
+    // Unique IDs of students who took tests.
     List<Long> students = studentAnswerList.stream().map(i -> i.getStudent().getId()).distinct()
         .collect(Collectors.toList());
 
@@ -136,7 +137,6 @@ public class ScoreService {
         if(item.equals(item2.getStudent().getId())){
           studentAnswers.putIfAbsent(item2.getQuestion().getId(), new ArrayList<>());
           studentAnswers.get(item2.getQuestion().getId()).add(item2.getAnswerCode());
-
         }
       }
       studentAnswerMap.put(item, studentAnswers);
