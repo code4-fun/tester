@@ -31,8 +31,8 @@ public class TestWorkController {
   }
 
   @GetMapping("{id}")
-  public TestWork getTestWork(@PathVariable Long id){
-    return testWorkService.getTestWorkById(id);
+  public TestWork getTestWork(@PathVariable("id") TestWork testWork){
+    return testWork;
   }
 
   @PostMapping
@@ -40,7 +40,7 @@ public class TestWorkController {
     return testWorkService.createTestWork(testWork);
   }
 
-  @PutMapping()
+  @PutMapping
   public TestWork updateTestWork(@RequestBody TestWork testWork){
     return testWorkService.updateTestWork(testWork);
   }
