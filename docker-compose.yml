@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:13.1-alpine
+    container_name: postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: tester
+    restart: always
+  app:
+    build:
+      context: .
+    container_name: app
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/tester
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=postgres
+    ports:
+      - 8099:8099
+    restart: always
+    links:
+      - db
+volumes:
+  db_data:
+    driver: local

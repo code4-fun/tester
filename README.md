@@ -1,7 +1,20 @@
-# Описание
+### Сборка и запуск
 
-### Создание базы данных
+##### Сборка и запуск с использованием Docker
+
+```
+git clone https://github.com/ignal1/tester.git
+cd tester
+docker-compose up
+```
+##### Сборка и запуск без использования Docker
 Перед запуском приложения необходимо создать базу данных **Postgres** с именем **tester**, пользователем **postgres** и паролем **postgres**.
+
+```
+git clone https://github.com/ignal1/tester.git
+cd tester
+./mvnw spring-boot:run
+``` 
 
 После запуска приложения в базе данных автоматически создаются таблицы и некоторые таблицы заполняются данными. Реализовано с помощью **Liquibase**.
 
